@@ -1,4 +1,2 @@
-markdown-it-py==4.2.0
-mdurl==0.1.2
-Pygments==2.21.0
-rich==15.0.0
+# Runtime dependencies are defined in pyproject.toml.
+-e .

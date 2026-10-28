@@ -48,7 +48,7 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
       margin: 2rem 0;
     }
@@ -65,13 +65,13 @@
   <div class="container">
     <h1>🐕 LeakHound</h1>
     <p class="subtitle">A fast, local pre-commit secret scanner powered by entropy and regex.</p>
-    <div class="badge">Open Source • Python CLI • DevSecOps</div>
+    <div class="badge">Local Scanning • Python CLI • DevSecOps</div>
 
-    <h2>Quick Install</h2>
-    <pre><code>git clone https://github.com/YOUR_USERNAME/leakhound.git
+    <p><a href="https://github.com/HizbullahS/leakhound" style="color: var(--accent)">View source and full documentation on GitHub →</a></p><h2>Quick Install</h2><p>Requires Python 3.10+. Install inside an activated virtual environment.</p>
+    <pre><code>git clone https://github.com/HizbullahS/leakhound.git
 cd leakhound
 pip install -e .
-./install_hook.sh</code></pre>
+leakhound --install-hook</code></pre>
 
     <div class="grid">
       <div class="card">
@@ -80,11 +80,11 @@ pip install -e .
       </div>
       <div class="card">
         <h3>Zero Third-Party Leaks</h3>
-        <p>Runs 100% locally on your machine prior to Git commit staging. No files or hashes are transmitted across the network.</p>
+        <p>Runs 100% locally on your machine on the exact Git-staged contents before committing. No files or hashes are transmitted across the network.</p>
       </div>
     </div>
 
-    <h2>Usage</h2>
+    <p>Findings are fully redacted. Detection is heuristic: false positives and missed secrets are possible. Binary/non-UTF-8 files are reported as skipped; files over 2 MiB return an error.</p><h2>Usage</h2>
     <pre><code># Scan a single file or directory
 leakhound --path ./src
 

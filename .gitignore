@@ -4,3 +4,14 @@ __pycache__/
 build/
 dist/
 .DS_Store
+.venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+*.log
